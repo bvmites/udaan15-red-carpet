@@ -1,6 +1,12 @@
 <md-card>
 
-  <md-content layout="column" layout-padding="5">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Red Carpet</h2>
+    </div>
+  </md-toolbar>
+
+  <md-card-content layout="column" layout-margin>
 
     <md-input-container>
       <label>Enrollment No.</label>
@@ -14,5 +20,7 @@
 
     <md-button class="md-primary" ng-click="login()">Login</md-button>
 
-  </md-content>
+    <span style="text-align: center; cursor: pointer; font-size: small; padding: 10px 0;" ng-click="showRegistration($event)">Where's my key ?</span>
+
+  </md-card-content>
 </md-card>
