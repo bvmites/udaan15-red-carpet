@@ -6,7 +6,7 @@
       login: {
         enroll: '',
         key: '',
-        isLoggedIn: true
+        isLoggedIn: false
       },
       url: {
         login: 'http://54.187.188.224:8001/api/login',

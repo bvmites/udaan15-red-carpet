@@ -15,12 +15,16 @@
 
     <md-input-container>
       <label>Key</label>
-      <input type="text" ng-model="data.key" title="Key" placeholder="xxxx">
+      <input type="text" ng-model="data.key" title="Key" md-maxlength="4" placeholder="xxxx">
     </md-input-container>
 
-    <md-button class="md-primary" ng-click="login()">Login</md-button>
+    <div layout="row" layout-align="center">
+      <md-button class="md-primary" ng-click="login()">Login</md-button>
+    </div>
 
-    <span style="text-align: center; cursor: pointer; font-size: small; padding: 10px 0;" ng-click="showRegistration($event)">Where's my key ?</span>
+    <div style="text-align: center; font-size: small; padding: 10px 0;">
+      <span style="cursor: pointer" ng-click="showRegistration($event)">Where's my key ?</span>
+    </div>
 
   </md-card-content>
 </md-card>

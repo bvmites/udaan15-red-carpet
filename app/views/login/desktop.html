@@ -6,13 +6,14 @@
     </div>
   </md-toolbar>
 
-  <md-card-content layout="row" layout-align="center center" layout-margin>
+  <md-card-content layout="row" layout-margin layout-align="space-around center">
 
-    <img flex src="images/banner.png" alt="Banner"/>
+    <img width="300" height="300" src="images/banner.png" alt="Banner"/>
 
-    <md-card flex>
+    <md-card flex="33">
 
       <md-card-content layout="column" layout-margin>
+
         <md-input-container>
           <label>Enrollment No.</label>
           <input type="number" ng-model="data.enroll" title="Enrollment No." placeholder="130070107022">
@@ -20,12 +21,17 @@
 
         <md-input-container>
           <label>Key</label>
-          <input type="text" ng-model="data.key" md-maxlength="4" title="Key" placeholder="xxxx">
+          <input type="text" ng-model="data.key" title="Key" md-maxlength="4" placeholder="xxxx">
         </md-input-container>
 
-        <md-button class="md-primary" ng-click="login()">Login</md-button>
+        <div layout="row" layout-align="center">
+          <md-button class="md-primary" ng-click="login()">Login</md-button>
+        </div>
 
-        <span style="text-align: center; cursor: pointer; font-size: small; padding: 10px 0;" ng-click="showRegistration($event)">Where's my key ?</span>
+        <div style="text-align: center; font-size: small; padding: 10px 0;">
+          <span style="cursor: pointer" ng-click="showRegistration($event)">Where's my key ?</span>
+        </div>
+
       </md-card-content>
 
     </md-card>
