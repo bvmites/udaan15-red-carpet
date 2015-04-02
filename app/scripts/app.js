@@ -16,6 +16,10 @@
           templateUrl: 'views/form.html',
           controller: 'FormCtrl'
         })
+        .when('/rising-star', {
+          templateUrl: 'views/rising-star.html',
+          controller: 'RisingStarCtrl'
+        })
         .otherwise({
           redirectTo: '/login'
         })
