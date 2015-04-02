@@ -1,32 +1,45 @@
 <md-card>
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2 class="md-flex">Red Carpet</h2>
+      <h2 class="md-flex">Rising Star</h2>
     </div>
   </md-toolbar>
 
   <md-card-content layout="column" layout-margin>
 
-    <md-subheader class="md-subheader">Rising Star</md-subheader>
+    <md-subheader class="md-subheader">Male</md-subheader>
 
-    <md-list>
-      <md-list-item class="rc-item" layout="row">
+    <div layout="column">
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="select('Alay Patel', $event)">
         <img class="rc-phone-image" src="images/nominees/alay-patel/phone.png" alt="Alay Patel"/>
-        <h5>Alay Patel</h5>
-      </md-list-item>
-      <md-list-item class="rc-item" layout="row">
-        <img class="rc-phone-image" src="images/nominees/maunil-swadas/phone.png" alt="Alay Patel"/>
-        <h5>Maunil Swadas</h5>
-      </md-list-item>
-      <md-list-item class="rc-item" layout="row">
-        <img class="rc-phone-image" src="images/nominees/parth-joshi/phone.png" alt="Alay Patel"/>
-        <h5>Parth Joshi</h5>
-      </md-list-item>
-      <md-list-item class="rc-item" layout="row">
-        <img class="rc-phone-image" src="images/nominees/shubham-dhar/phone.png" alt="Alay Patel"/>
-        <h5>Shubham Dhar</h5>
-      </md-list-item>
-    </md-list>
+        <div flex>Alay Patel</div>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="select('Maunil Swadas', $event)">
+        <img class="rc-phone-image" src="images/nominees/maunil-swadas/phone.png" alt="Maunil Swadas"/>
+        <div flex>Maunil Swadas</div>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="select('Parth Joshi', $event)">
+        <img class="rc-phone-image" src="images/nominees/parth-joshi/phone.png" alt="Parth Joshi"/>
+        <div flex>Parth Joshi</div>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="select('Shubham Dhar', $event)">
+        <img class="rc-phone-image" src="images/nominees/shubham-dhar/phone.png" alt="Shubham Dhar"/>
+        <div flex>Shubham Dhar</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <div layout="row">
+      <div flex layout="row" layout-align="center">
+        <md-button ng-click="prev()">Intro</md-button>
+      </div>
+      <div flex layout="row" layout-align="center">
+        <md-button ng-show="sectionFilled()" ng-click="next()">Sports Icon</md-button>
+      </div>
+    </div>
 
   </md-card-content>
 </md-card>

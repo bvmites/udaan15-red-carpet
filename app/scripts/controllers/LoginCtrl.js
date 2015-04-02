@@ -61,24 +61,6 @@
           });
       };
 
-      //
-      //$scope.showConfirm = function(ev) {
-      //  // Appending dialog to document.body to cover side nav in docs app
-      //  var confirm = $mdDialog.confirm()
-      //    .parent(angular.element(document.body))
-      //    .title('Would you like to delete your debt?')
-      //    .content('All of the banks have agreed to forgive you your debts.')
-      //    .ariaLabel('Lucky day')
-      //    .ok('Please do it!')
-      //    .cancel('Sounds like a scam')
-      //    .targetEvent(ev);
-      //  $mdDialog.show(confirm).then(function() {
-      //    $scope.alert = 'You decided to get rid of your debt.';
-      //  }, function() {
-      //    $scope.alert = 'You decided to keep your debt.';
-      //  });
-      //};
-
       $scope.showRegistration = function(event) {
         $mdDialog.show(
           $mdDialog.alert()

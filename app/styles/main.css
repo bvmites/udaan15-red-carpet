@@ -1,4 +1,9 @@
 img.rc-phone-image {
   width: 45px;
   height: 45px;
+  border-radius: 50%;
+}
+
+.rc-item {
+  cursor: pointer;
 }
