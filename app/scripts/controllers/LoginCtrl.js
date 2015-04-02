@@ -13,11 +13,20 @@
           key: Data.login.key
         })
           .success(function (response) {
-            console.log(response);
-            if (response.ok == true) {
+            if (response.ok) {
               Data.login.isLoggedIn = true;
               $location.url('/form');
-            } else if (response.voted == true) {
+            } else if(typeof response.error != 'undefined' && response.error.indexOf('credentials') >= 0) {
+
+              // Wrong Credentials
+
+              $mdDialog.show(
+                $mdDialog.alert()
+                  .title('Wrong Title')
+                  .content('Wrong Content')
+                  .ok('Lemme Retry')
+              );
+            } else if (typeof response.error != 'undefined' && response.error.indexOf('voted') >= 0) {
 
               // Already Voted
 
@@ -29,12 +38,12 @@
               );
             } else {
 
-              // Wrong Credentials
+              // Unknown Error
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Wrong Title')
-                  .content('Wrong Content')
+                  .title('Unknown Title')
+                  .content('Unknown Content')
                   .ok('Lemme Retry')
               );
             }
