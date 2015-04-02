@@ -2,17 +2,9 @@
   'use strict';
 
   angular.module('u15RCApp')
-    .controller('LoginCtrl', function ($scope, Data, $http, $location, screenSize, $mdDialog) {
-      $scope.viewPort = {
-        phone: screenSize.on('xs', function (match) {
-          $scope.viewPort.phone = match;
-        }),
-        desktop: screenSize.on('sm, md, lg', function (match) {
-          $scope.viewPort.desktop = match;
-        })
-      };
-
+    .controller('LoginCtrl', function ($scope, Data, $http, $location, $mdDialog) {
       $scope.data = Data.login;
+      $scope.viewport = Data.viewport;
       $scope.login = function () {
 
         // Request Server
@@ -33,7 +25,6 @@
                 $mdDialog.alert()
                   .title('Voted Title')
                   .content('Voted Content')
-                  .ariaLabel('Voted')
                   .ok('My Bad')
               );
             } else {
@@ -44,16 +35,26 @@
                 $mdDialog.alert()
                   .title('Wrong Title')
                   .content('Wrong Content')
-                  .ariaLabel('Credentials')
                   .ok('Lemme Retry')
               );
             }
+          })
+          .error(function () {
+
+            // Error Occurred
+
+            $mdDialog.show(
+              $mdDialog.alert()
+                .title('Error Title')
+                .content('Error Content')
+                .ok('Lemme Retry')
+            );
           });
       };
 
       //
       //$scope.showConfirm = function(ev) {
-      //  // Appending dialog to document.body to cover sidenav in docs app
+      //  // Appending dialog to document.body to cover side nav in docs app
       //  var confirm = $mdDialog.confirm()
       //    .parent(angular.element(document.body))
       //    .title('Would you like to delete your debt?')
@@ -74,7 +75,6 @@
           $mdDialog.alert()
             .title('Registration Title')
             .content('Registration Content')
-            .ariaLabel('Registration')
             .ok('Got it!')
             .targetEvent(event)
         );

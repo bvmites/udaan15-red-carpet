@@ -13,7 +13,8 @@
           controller: 'LoginCtrl'
         })
         .when('/form', {
-          templateUrl: 'views/form.html'
+          templateUrl: 'views/form.html',
+          controller: 'FormCtrl'
         })
         .otherwise({
           redirectTo: '/login'
