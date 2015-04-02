@@ -20,6 +20,10 @@
           templateUrl: 'views/rising-star.html',
           controller: 'RisingStarCtrl'
         })
+        .when('/sports-icon', {
+          templateUrl: 'views/sports-icon.html',
+          controller: 'SportsIconCtrl'
+        })
         .otherwise({
           redirectTo: '/login'
         })
