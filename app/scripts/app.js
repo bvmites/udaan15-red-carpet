@@ -3,7 +3,8 @@
 
   angular.module('u15RCApp', [
     'ngRoute',
-    'ngMaterial'
+    'ngMaterial',
+    'matchMedia'
   ])
     .config(function ($routeProvider) {
       $routeProvider

@@ -6,8 +6,12 @@
       login: {
         enroll: '',
         key: '',
-        hasRegistered: false,
+        voted: false,
         isLoggedIn: false
+      },
+      url: {
+        login: 'http://vote.udaan15.com/login',
+        vote: 'http://vote.udaan15.com/vote'
       }
     });
 
