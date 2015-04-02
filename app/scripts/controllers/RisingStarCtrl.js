@@ -6,6 +6,10 @@
       $scope.viewport = Data.viewport;
       $scope.data = Data.form;
 
+      $scope.confirm = function (option) {
+        Data.form.risingStar = option;
+      };
+
       $scope.select = function (option, event) {
 
         var confirm = $mdDialog.confirm()
@@ -15,7 +19,7 @@
           .cancel('Close')
           .targetEvent(event);
         $mdDialog.show(confirm).then(function () {
-          Data.form.risingStar = option;
+          $scope.confirm(option);
         }, function () {});
 
       };
