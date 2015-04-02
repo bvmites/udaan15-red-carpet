@@ -32,6 +32,10 @@
           templateUrl: 'views/style-icon.html',
           controller: 'StyleIconCtrl'
         })
+        .when('/persona', {
+          templateUrl: 'views/persona.html',
+          controller: 'PersonaCtrl'
+        })
         .otherwise({
           redirectTo: '/login'
         })
