@@ -1,0 +1,70 @@
+<md-card>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Face of the year</h2>
+    </div>
+  </md-toolbar>
+
+  <md-card-content layout="column" layout-margin>
+
+    <md-subheader class="md-subheader">Male</md-subheader>
+
+    <div layout="column">
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Kushal Choudhari', $event)">
+        <img class="rc-phone-image" src="images/nominees/kushal-choudhari/phone.png" alt="Kushal Choudhari"/>
+        <div flex>Kushal Choudhari</div>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Varun Dave', $event)">
+        <img class="rc-phone-image" src="images/nominees/varun-dave/phone.png" alt="Varun Dave"/>
+        <div flex>Varun Dave</div>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Hasnen', $event)">
+        <img class="rc-phone-image" src="images/nominees/hasnen/phone.png" alt="Hasnen"/>
+        <div flex>Hasnen</div>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Vedant Desai', $event)">
+        <img class="rc-phone-image" src="images/nominees/vedant-desai/phone.png" alt="Vedant Desai"/>
+        <div flex>Vedant Desai</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <md-subheader class="md-subheader">Female</md-subheader>
+
+    <div layout="column">
+      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Forum Nayak', $event)">
+        <div flex style="text-align: right;">Forum Nayak</div>
+        <img class="rc-phone-image" src="images/nominees/forum-nayak/phone.png" alt="Forum Nayak"/>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Jenny Kansara', $event)">
+        <div flex style="text-align: right;">Jenny Kansara</div>
+        <img class="rc-phone-image" src="images/nominees/jenny-kansara/phone.png" alt="Jenny Kansara"/>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Priyanka Patel', $event)">
+        <div flex style="text-align: right;">Priyanka Patel</div>
+        <img class="rc-phone-image" src="images/nominees/priyanka-patel/phone.png" alt="Priyanka Patel"/>
+      </div>
+      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Azmeen Bhabharawala', $event)">
+        <div flex style="text-align: right;">Azmeen Bhabharawala</div>
+        <img class="rc-phone-image" src="images/nominees/azmeen-bhabharawala/phone.png" alt="Azmeen Bhabharawala"/>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <div layout="row">
+      <div flex layout="row" layout-align="center">
+        <md-button ng-click="prev()">Sports Icon</md-button>
+      </div>
+      <div flex layout="row" layout-align="center">
+        <md-button ng-show="sectionFilled()" ng-click="next()">Style Icon</md-button>
+      </div>
+    </div>
+
+  </md-card-content>
+</md-card>

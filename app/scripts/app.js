@@ -24,6 +24,10 @@
           templateUrl: 'views/sports-icon.html',
           controller: 'SportsIconCtrl'
         })
+        .when('/face-of-the-year', {
+          templateUrl: 'views/face-of-the-year.html',
+          controller: 'FaceCtrl'
+        })
         .otherwise({
           redirectTo: '/login'
         })
