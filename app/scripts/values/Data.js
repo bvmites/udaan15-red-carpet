@@ -13,7 +13,24 @@
         vote: 'http://54.187.188.224:8001/api/vote'
       },
       form: {
-
+        risingStar: '',
+        sportsIcon: '',
+        face: {
+          male: '',
+          female: ''
+        },
+        styleIcon: {
+          male: '',
+          female: ''
+        },
+        persona: {
+          male: '',
+          female: ''
+        },
+        artist: {
+          male: '',
+          female: ''
+        }
       },
       viewport: {}
     })
