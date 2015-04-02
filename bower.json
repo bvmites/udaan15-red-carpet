@@ -1,0 +1,26 @@
+{
+  "name": "udaan15-red-carpet",
+  "version": "0.0.0",
+  "authors": [
+    "Dhruvin Gandhi <dhruvin2910@gmail.com>"
+  ],
+  "description": "Udaan15 Red Carpet",
+  "main": "app/index.html",
+  "keywords": [
+    "Angular",
+    "Material",
+    "Design"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15"
+  }
+}
