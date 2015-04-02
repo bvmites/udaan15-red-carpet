@@ -4,14 +4,11 @@
   angular.module('u15RCApp')
     .controller('LoginCtrl', function ($scope, Data, $http, $location, screenSize) {
       $scope.viewPort = {
-        sm: screenSize.on('sm', function (match) {
-          $scope.viewPort.sm = match;
+        phone: screenSize.on('xs', function (match) {
+          $scope.viewPort.phone = match;
         }),
-        md: screenSize.on('md', function (match) {
-          $scope.viewPort.md = match;
-        }),
-        lg: screenSize.on('lg', function (match) {
-          $scope.viewPort.lg = match;
+        desktop: screenSize.on('sm, md, lg', function (match) {
+          $scope.viewPort.desktop = match;
         })
       };
 
@@ -27,14 +24,14 @@
         })
           .success(function (response) {
             console.log(response);
-            if(response.ok == true){
+            if (response.ok == true) {
               Data.login.isLoggedIn = true;
               $location.url('/form');
-            } else if(response.voted == true){
+            } else if (response.voted == true) {
               // todo: Alert voted
               alert('Already Voted');
             } else {
-              // todo: Wrong Credentials
+              // todo: Alert Wrong Credentials
               alert('Wrong Credentials');
             }
           });

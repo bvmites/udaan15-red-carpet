@@ -1,9 +1,2 @@
-<div ng-if="viewPort.sm">
-  Small
-</div>
-<div ng-if="viewPort.md">
-  Medium
-</div>
-<div ng-if="viewPort.lg">
-  Large
-</div>
+<div ng-if="viewPort.phone" ng-include="'views/login/phone.html'"></div>
+<div ng-if="viewPort.desktop" ng-include="'views/login/desktop.html'"></div>

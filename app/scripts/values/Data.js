@@ -10,8 +10,8 @@
         isLoggedIn: false
       },
       url: {
-        login: 'http://vote.udaan15.com/login',
-        vote: 'http://vote.udaan15.com/vote'
+        login: 'http://54.187.188.224:8001/api/login',
+        vote: 'http://54.187.188.224:8001/api/vote'
       }
     });
 
