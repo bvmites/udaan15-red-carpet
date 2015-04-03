@@ -4,7 +4,6 @@
   angular.module('u15RCApp')
     .controller('StyleIconCtrl', function ($scope, Data, $location, $mdDialog) {
       $scope.viewport = Data.viewport;
-      $scope.data = Data.form;
 
       $scope.confirmMale = function (option) {
         Data.form.styleIcon.male = option;
@@ -40,10 +39,6 @@
           $scope.confirmFemale(option);
         }, function () {});
 
-      };
-
-      $scope.prev = function () {
-        $location.url('/face-of-the-year');
       };
 
       $scope.next = function () {

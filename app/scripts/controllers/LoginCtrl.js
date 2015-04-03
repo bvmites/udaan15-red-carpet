@@ -25,7 +25,10 @@
                   .title('Wrong Title')
                   .content('Wrong Content')
                   .ok('Lemme Retry')
-              );
+              )
+                .then(function () {
+                  Data.login.key = '';
+                });
             } else if (typeof response.error != 'undefined' && response.error.indexOf('voted') >= 0) {
 
               // Already Voted
@@ -35,7 +38,11 @@
                   .title('Voted Title')
                   .content('Voted Content')
                   .ok('My Bad')
-              );
+              )
+                .then(function () {
+                  Data.login.enroll = '';
+                  Data.login.key = '';
+                });
             } else {
 
               // Unknown Error
@@ -45,7 +52,11 @@
                   .title('Unknown Title')
                   .content('Unknown Content')
                   .ok('Lemme Retry')
-              );
+              )
+                .then(function () {
+                  Data.login.enroll = '';
+                  Data.login.key = '';
+                });
             }
           })
           .error(function () {

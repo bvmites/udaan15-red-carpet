@@ -12,7 +12,10 @@
 
         // Request server
         $http.post(Data.url.vote, {
-          login: Data.login,
+          login: {
+            enroll: Data.login.enroll,
+            key: Data.login.key
+          },
           form: Data.form
         })
           .success(function (response) {
@@ -27,7 +30,9 @@
               )
                 .then(function () {
                   Data.login.isLoggedIn = false;
-                  $scope.confirmText = 'Exit';
+                  Data.login.enroll = '';
+                  Data.login.key = '';
+                  $scope.confirmText = 'Logout';
                   $scope.confirmNext = function () {
                     $location.url('/login');
                   };

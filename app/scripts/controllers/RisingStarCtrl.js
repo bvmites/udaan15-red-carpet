@@ -4,7 +4,6 @@
   angular.module('u15RCApp')
     .controller('RisingStarCtrl', function ($scope, Data, $location, $mdDialog) {
       $scope.viewport = Data.viewport;
-      $scope.data = Data.form;
 
       $scope.confirm = function (option) {
         Data.form.risingStar = option;
@@ -22,10 +21,6 @@
           $scope.confirm(option);
         }, function () {});
 
-      };
-
-      $scope.prev = function () {
-        $location.url('/form');
       };
 
       $scope.next = function () {

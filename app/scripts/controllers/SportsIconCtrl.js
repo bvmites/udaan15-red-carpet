@@ -4,7 +4,6 @@
   angular.module('u15RCApp')
     .controller('SportsIconCtrl', function ($scope, Data, $location, $mdDialog) {
       $scope.viewport = Data.viewport;
-      $scope.data = Data.form;
 
       $scope.confirm = function (option) {
         Data.form.sportsIcon = option;
@@ -22,10 +21,6 @@
           $scope.confirm(option);
         }, function () {});
 
-      };
-
-      $scope.prev = function () {
-        $location.url('/rising-star');
       };
 
       $scope.next = function () {
