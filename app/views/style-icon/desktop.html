@@ -1,1 +1,67 @@
-Desktop View
+<md-card style="width: {{viewport.container}};">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Style Icon</h2>
+    </div>
+  </md-toolbar>
+
+  <md-card-content layout="column" layout-margin>
+
+    <md-subheader class="md-subheader">Male</md-subheader>
+
+    <div layout="row" layout-align="space-around">
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Aksh Sharma', $event)">
+        <img class="rc-desktop-image" src="images/nominees/aksh-sharma/desktop.png" alt="Aksh Sharma"/>
+        <div flex>Aksh Sharma</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Dhruv Patel', $event)">
+        <img class="rc-desktop-image" src="images/nominees/dhruv-patel/desktop.png" alt="Dhruv Patel"/>
+        <div flex>Dhruv Patel</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Niraj Parmar', $event)">
+        <img class="rc-desktop-image" src="images/nominees/niraj-parmar/desktop.png" alt="Niraj Parmar"/>
+        <div flex>Niraj Parmar</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Yatsa Barot', $event)">
+        <img class="rc-desktop-image" src="images/nominees/yatsa-barot/desktop.png" alt="Yatsa Barot"/>
+        <div flex>Yatsa Barot</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <md-subheader class="md-subheader">Female</md-subheader>
+
+    <div layout="row" layout-align="space-around">
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Ishita Ghodasara', $event)">
+        <img class="rc-desktop-image" src="images/nominees/ishita-ghodasara/desktop.png" alt="Ishita Ghodasara"/>
+        <div flex>Ishita Ghodasara</div>
+      </div>
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Sakshi Sanyal', $event)">
+        <img class="rc-desktop-image" src="images/nominees/sakshi-sanyal/desktop.png" alt="Sakshi Sanyal"/>
+        <div flex>Sakshi Sanyal</div>
+      </div>
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Khushboo Desai', $event)">
+        <img class="rc-desktop-image" src="images/nominees/khushboo-desai/desktop.png" alt="Khushboo Desai"/>
+        <div flex>Khushboo Desai</div>
+      </div>
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Pinal Meruliya', $event)">
+        <img class="rc-desktop-image" src="images/nominees/pinal-meruliya/desktop.png" alt="Pinal Meruliya"/>
+        <div flex>Pinal Meruliya</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <div layout="row" layout-align="center">
+      <md-button class="md-button md-primary md-raised" ng-disabled="!sectionFilled()" ng-click="next()">
+        Next
+      </md-button>
+    </div>
+
+  </md-card-content>
+</md-card>

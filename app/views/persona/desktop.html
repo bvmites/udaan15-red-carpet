@@ -1,1 +1,59 @@
-Desktop View
+<md-card style="width: {{viewport.container}};">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Persona</h2>
+    </div>
+  </md-toolbar>
+
+  <md-card-content layout="column" layout-margin>
+
+    <md-subheader class="md-subheader">Male</md-subheader>
+
+    <div layout="row" layout-align="space-around">
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Joel D\'souza', $event)">
+        <img class="rc-desktop-image" src="images/nominees/joel-dsouza/desktop.png" alt="Joel D'souza"/>
+        <div flex>Joel D'souza</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Apoorva Parikh', $event)">
+        <img class="rc-desktop-image" src="images/nominees/apoorva-parikh/desktop.png" alt="Apoorva Parikh"/>
+        <div flex>Apoorva Parikh</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectMale('Abhishek Kumar', $event)">
+        <img class="rc-desktop-image" src="images/nominees/abhishek-kumar/desktop.png" alt="Abhishek Kumar"/>
+        <div flex>Abhishek Kumar</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <md-subheader class="md-subheader">Female</md-subheader>
+
+    <div layout="row" layout-align="space-around">
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Nirali Desai', $event)">
+        <img class="rc-desktop-image" src="images/nominees/nirali-desai/desktop.png" alt="Nirali Desai"/>
+        <div flex>Nirali Desai</div>
+      </div>
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Prachi Jhala', $event)">
+        <img class="rc-desktop-image" src="images/nominees/prachi-jhala/desktop.png" alt="Prachi Jhala"/>
+        <div flex>Prachi Jhala</div>
+      </div>
+      <div class="rc-item rc-desktop rc-female" layout="column" layout-margin layout-padding layout-align="center center" ng-click="selectFemale('Shloka Naudiyal', $event)">
+        <img class="rc-desktop-image" src="images/nominees/shloka-naudiyal/desktop.png" alt="Shloka Naudiyal"/>
+        <div flex>Shloka Naudiyal</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <div layout="row" layout-align="center">
+      <md-button class="md-button md-primary md-raised" ng-disabled="!sectionFilled()" ng-click="next()">
+        Next
+      </md-button>
+    </div>
+
+  </md-card-content>
+</md-card>

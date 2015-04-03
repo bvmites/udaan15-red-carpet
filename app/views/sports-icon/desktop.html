@@ -1,1 +1,50 @@
-Desktop View
+<md-card style="width: {{viewport.container}};">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Sports Icon</h2>
+    </div>
+  </md-toolbar>
+
+  <md-card-content layout="column" layout-margin>
+
+    <md-subheader class="md-subheader">Male</md-subheader>
+
+    <div layout="row" layout-align="space-around">
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center"
+           ng-click="select('Vikas Dhangada', $event)">
+        <img class="rc-desktop-image" src="images/nominees/vikas-dhangada/desktop.png" alt="Vikas Dhangada"/>
+
+        <div flex>Vikas Dhangada</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center"
+           ng-click="select('Manthan Mehta', $event)">
+        <img class="rc-desktop-image" src="images/nominees/manthan-mehta/desktop.png" alt="Manthan Mehta"/>
+
+        <div flex>Manthan Mehta</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center"
+           ng-click="select('Vikas Vahoniya', $event)">
+        <img class="rc-desktop-image" src="images/nominees/vikas-vahoniya/desktop.png" alt="Vikas Vahoniya"/>
+
+        <div flex>Vikas Vahoniya</div>
+      </div>
+      <div class="rc-item rc-desktop rc-male" layout="column" layout-margin layout-padding layout-align="center center"
+           ng-click="select('Tanmay Parekh', $event)">
+        <img class="rc-desktop-image" src="images/nominees/tanmay-parekh/desktop.png" alt="Tanmay Parekh"/>
+
+        <div flex>Tanmay Parekh</div>
+      </div>
+    </div>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <div layout="row" layout-align="center">
+      <md-button class="md-button md-primary md-raised" ng-disabled="!sectionFilled()" ng-click="next()">
+        Next
+      </md-button>
+    </div>
+
+  </md-card-content>
+</md-card>

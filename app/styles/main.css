@@ -1,11 +1,31 @@
 img.rc-phone-image {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+}
+img.rc-desktop-image {
+  width: 125px;
+  height: 125px;
+  border-radius: 5%;
 }
 
 .rc-item {
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.rc-item.rc-desktop {
+  width: 125px;
+}
+
+.md-button {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .rc-item > img {
@@ -13,19 +33,37 @@ img.rc-phone-image {
 }
 
 .rc-selected.rc-male > img {
-  border: 2px solid #3f51b5;
+  border: 2px solid rgba(63, 81, 181, 0.75);
+  transform: scale(1.02);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-shadow: 5px 5px 20px 0 rgba(63,81,181,0.75);
+  -moz-box-shadow: 5px 5px 20px 0 rgba(63,81,181,0.75);
+  box-shadow: 5px 5px 20px 0 rgba(63,81,181,0.75);
 }
 
 .rc-selected.rc-female > img {
-  border: 2px solid #ff4081;
+  border: 2px solid rgba(255, 64, 129, 0.75);
+  transform: scale(1.02);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-shadow: 5px 5px 20px 0 rgba(255,64,129,0.75);
+  -moz-box-shadow: 5px 5px 20px 0 rgba(255,64,129,0.75);
+  box-shadow: 5px 5px 20px 0 rgba(255,64,129,0.75);
 }
 
 .rc-selected.rc-male > div {
-  color: #3f51b5;
+  /*color: #3f51b5;*/
+  border-bottom: 2px solid rgba(63, 81, 181, 0.75);
 }
 
 .rc-selected.rc-female > div {
-  color: #ff4081;
+  /*color: #ff4081;*/
+  border-bottom: 2px solid rgba(255, 64, 129, 0.75);
 }
 
 .rc-item.rc-unselected {
