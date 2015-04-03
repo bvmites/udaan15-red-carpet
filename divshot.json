@@ -2,5 +2,5 @@
   "name": "udaan15-red-carpet",
   "root": "./app/",
   "clean_urls": false,
-  "error_page": "./app/404.html"
+  "error_page": "404.html"
 }
