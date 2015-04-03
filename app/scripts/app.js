@@ -40,6 +40,10 @@
           templateUrl: 'views/artist.html',
           controller: 'ArtistCtrl'
         })
+        .when('/vote', {
+          templateUrl: 'views/vote.html',
+          controller: 'VoteCtrl'
+        })
         .otherwise({
           redirectTo: '/login'
         })
