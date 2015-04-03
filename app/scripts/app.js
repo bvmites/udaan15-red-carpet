@@ -36,6 +36,10 @@
           templateUrl: 'views/persona.html',
           controller: 'PersonaCtrl'
         })
+        .when('/artist', {
+          templateUrl: 'views/artist.html',
+          controller: 'ArtistCtrl'
+        })
         .otherwise({
           redirectTo: '/login'
         })
