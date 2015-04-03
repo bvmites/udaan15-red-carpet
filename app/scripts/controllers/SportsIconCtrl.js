@@ -2,25 +2,14 @@
   'use strict';
 
   angular.module('u15RCApp')
-    .controller('SportsIconCtrl', function ($scope, Data, $location, $mdDialog) {
+    .controller('SportsIconCtrl', function ($scope, Data, $location) {
       $scope.viewport = Data.viewport;
 
-      $scope.confirm = function (option) {
-        Data.form.sportsIcon = option;
-      };
-
       $scope.select = function (option, event) {
-
-        var confirm = $mdDialog.confirm()
-          .title(option)
-          .content('Content')
-          .ok('Vote')
-          .cancel('Close')
-          .targetEvent(event);
-        $mdDialog.show(confirm).then(function () {
-          $scope.confirm(option);
-        }, function () {});
-
+        var selected = angular.element(event.currentTarget);
+        Data.form.sportsIcon = option;
+        selected.parent().children().removeClass('rc-selected').addClass('rc-unselected');
+        selected.removeClass('rc-unselected').addClass('rc-selected');
       };
 
       $scope.next = function () {

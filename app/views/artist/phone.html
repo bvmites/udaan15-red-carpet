@@ -10,20 +10,28 @@
     <md-subheader class="md-subheader">Male</md-subheader>
 
     <div layout="column">
-      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Poornank Patel', $event)">
+      <div class="rc-item rc-male" layout="row" layout-margin layout-align="start center"
+           ng-click="selectMale('Poornank Patel', $event)">
         <img class="rc-phone-image" src="images/nominees/poornank-patel/phone.png" alt="Poornank Patel"/>
+
         <div flex>Poornank Patel</div>
       </div>
-      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Kishan Naraniya', $event)">
+      <div class="rc-item rc-male" layout="row" layout-margin layout-align="start center"
+           ng-click="selectMale('Kishan Naraniya', $event)">
         <img class="rc-phone-image" src="images/nominees/kishan-naraniya/phone.png" alt="Kishan Naraniya"/>
+
         <div flex>Kishan Naraniya</div>
       </div>
-      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Akash Joshi', $event)">
+      <div class="rc-item rc-male" layout="row" layout-margin layout-align="start center"
+           ng-click="selectMale('Akash Joshi', $event)">
         <img class="rc-phone-image" src="images/nominees/akash-joshi/phone.png" alt="Akash Joshi"/>
+
         <div flex>Akash Joshi</div>
       </div>
-      <div class="rc-item" layout="row" layout-margin layout-align="start center" ng-click="selectMale('Akshat Uniyal', $event)">
+      <div class="rc-item rc-male" layout="row" layout-margin layout-align="start center"
+           ng-click="selectMale('Akshat Uniyal', $event)">
         <img class="rc-phone-image" src="images/nominees/akshat-uniyal/phone.png" alt="Akshat Uniyal"/>
+
         <div flex>Akshat Uniyal</div>
       </div>
     </div>
@@ -35,19 +43,23 @@
     <md-subheader class="md-subheader">Female</md-subheader>
 
     <div layout="column">
-      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Dhvani Katkaria', $event)">
+      <div class="rc-item rc-female" layout="row" layout-margin layout-align="end center"
+           ng-click="selectFemale('Dhvani Katkaria', $event)">
         <div flex style="text-align: right;">Dhvani Katkaria</div>
         <img class="rc-phone-image" src="images/nominees/dhvani-katkaria/phone.png" alt="Dhvani Katkaria"/>
       </div>
-      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Niharika Modi', $event)">
+      <div class="rc-item rc-female" layout="row" layout-margin layout-align="end center"
+           ng-click="selectFemale('Niharika Modi', $event)">
         <div flex style="text-align: right;">Niharika Modi</div>
         <img class="rc-phone-image" src="images/nominees/niharika-modi/phone.png" alt="Niharika Modi"/>
       </div>
-      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Aditi Patel', $event)">
+      <div class="rc-item rc-female" layout="row" layout-margin layout-align="end center"
+           ng-click="selectFemale('Aditi Patel', $event)">
         <div flex style="text-align: right;">Aditi Patel</div>
         <img class="rc-phone-image" src="images/nominees/aditi-patel/phone.png" alt="Aditi Patel"/>
       </div>
-      <div class="rc-item" layout="row" layout-margin layout-align="end center" ng-click="selectFemale('Vanshi Upadhyaya', $event)">
+      <div class="rc-item rc-female" layout="row" layout-margin layout-align="end center"
+           ng-click="selectFemale('Vanshi Upadhyaya', $event)">
         <div flex style="text-align: right;">Vanshi Upadhyaya</div>
         <img class="rc-phone-image" src="images/nominees/vanshi-upadhyaya/phone.png" alt="Vanshi Upadhyaya"/>
       </div>
@@ -57,10 +69,10 @@
     <md-divider></md-divider>
     <br/>
 
-    <div layout="row">
-      <div flex layout="row" layout-align="center">
-        <md-button ng-show="sectionFilled()" ng-click="next()">Finish</md-button>
-      </div>
+    <div layout="row" layout-align="center">
+      <md-button class="md-button md-primary md-raised" ng-disabled="!sectionFilled()" ng-click="next()">
+        Finish
+      </md-button>
     </div>
 
   </md-card-content>

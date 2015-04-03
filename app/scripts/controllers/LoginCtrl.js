@@ -5,7 +5,7 @@
     .controller('LoginCtrl', function ($scope, Data, $http, $location, $mdDialog) {
       $scope.data = Data.login;
       $scope.viewport = Data.viewport;
-      $scope.login = function () {
+      $scope.login = function (event) {
 
         // Request Server
         $http.post(Data.url.login, {
@@ -25,6 +25,7 @@
                   .title('Wrong Title')
                   .content('Wrong Content')
                   .ok('Lemme Retry')
+                  .targetEvent(event)
               )
                 .then(function () {
                   Data.login.key = '';
@@ -38,6 +39,7 @@
                   .title('Voted Title')
                   .content('Voted Content')
                   .ok('My Bad')
+                  .targetEvent(event)
               )
                 .then(function () {
                   Data.login.enroll = '';
@@ -52,6 +54,7 @@
                   .title('Unknown Title')
                   .content('Unknown Content')
                   .ok('Lemme Retry')
+                  .targetEvent(event)
               )
                 .then(function () {
                   Data.login.enroll = '';
@@ -68,6 +71,7 @@
                 .title('Error Title')
                 .content('Error Content')
                 .ok('Lemme Retry')
+                .targetEvent(event)
             );
           });
       };

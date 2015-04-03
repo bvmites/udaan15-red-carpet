@@ -29,9 +29,14 @@
     <md-divider></md-divider>
     <br/>
 
-    <div layout="row" layout-align="center center">
-      <md-button class="md-primary" ng-click="confirmNext()">{{confirmText}}</md-button>
+
+    <div layout="row" layout-align="center">
+      <md-button class="md-button md-primary md-raised" ng-disabled="confirmText == 'Uploading'"
+                 ng-click="confirmNext()">
+        {{confirmText}}
+      </md-button>
     </div>
+
 
   </md-card-content>
 </md-card>

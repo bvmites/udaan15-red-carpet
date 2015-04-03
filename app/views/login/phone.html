@@ -19,11 +19,13 @@
     </md-input-container>
 
     <div layout="row" layout-align="center">
-      <md-button class="md-primary" ng-click="login()">Login</md-button>
+      <md-button class="md-button md-primary md-raised" ng-click="login($event)">Login</md-button>
     </div>
 
-    <div style="text-align: center; font-size: small; padding: 10px 0;">
-      <span style="cursor: pointer" ng-click="showRegistration($event)">Where's my key ?</span>
+    <div layout="row" layout-align="center">
+      <md-button style="font-size: small; margin: 30px 0;" md-no-ink class="md-primary"
+                 ng-click="showRegistration($event)">Where's my key ?
+      </md-button>
     </div>
 
   </md-card-content>
