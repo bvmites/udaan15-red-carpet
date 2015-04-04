@@ -5,10 +5,9 @@
     .controller('VoteCtrl', function ($scope, Data, $location, $http, $mdDialog) {
       $scope.viewport = Data.viewport;
 
-      $scope.confirmText = 'Uploading';
-      $scope.confirmNext = function () {};
-
       $scope.confirm = function () {
+
+        $scope.mode = 'upload';
 
         // Request server
         $http.post(Data.url.vote, {
@@ -21,39 +20,53 @@
           .success(function (response) {
             if (response.ok) {
 
+              $scope.mode = 'feedback';
+              Data.login.hasVoted = true;
+
               // Submitted Alert
               $mdDialog.show(
                 $mdDialog.alert()
                   .title('Submitted Title')
                   .content('Submitted Content')
                   .ok('Ahem')
-              )
-                .then(function () {
-                  Data.login.isLoggedIn = false;
-                  Data.login.enroll = '';
-                  Data.login.key = '';
-                  $scope.confirmText = 'Logout';
-                  $scope.confirmNext = function () {
-                    $location.url('/login');
-                  };
-                });
-            } else {
+              );
+            } else if (typeof response.error != 'undefined' && response.error.indexOf('credentials') >= 0) {
 
-              // Unknown Error
+              // Wrong Credentials
+
+              Data.reset();
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Unknown Title')
-                  .content('Unknown Content')
+                  .title('Wrong Title')
+                  .content('Wrong Content')
                   .ok('Lemme Retry')
+                  .targetEvent(event)
               )
                 .then(function () {
-                  Data.login.isLoggedIn = false;
-                  $location.url('/login')
+                  $location.url('/login');
+                });
+            } else if (typeof response.error != 'undefined' && response.error.indexOf('voted') >= 0) {
+
+              // Already Voted
+
+              Data.reset();
+
+              $mdDialog.show(
+                $mdDialog.alert()
+                  .title('Voted Title')
+                  .content('Voted Content')
+                  .ok('My Bad')
+                  .targetEvent(event)
+              )
+                .then(function () {
+                  $location.url('/login');
                 });
             }
           })
           .error(function () {
+
+            $scope.mode = 'retry';
 
             // Error Occurred
 
@@ -63,19 +76,15 @@
                 .content('Error Content')
                 .ok('Lemme Retry')
             );
-            $scope.confirmText = 'Retry';
-            $scope.confirmNext = function () {
-              $scope.confirm();
-            };
           });
       };
 
-      if(!Data.login.isLoggedIn){
-        $location.url('/login');
-      }
+      $scope.next = function () {
+        $location.url('/feedback');
+      };
 
       $location.url(Data.properView());
-      if(Data.properView() == '/vote') $scope.confirm();
+      if (Data.properView() == '/vote') $scope.confirm();
     });
 
 })();

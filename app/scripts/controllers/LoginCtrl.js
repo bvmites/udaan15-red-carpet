@@ -46,19 +46,20 @@
 
               // Wrong Credentials
 
+              Data.login.key = '';
+
               $mdDialog.show(
                 $mdDialog.alert()
                   .title('Wrong Title')
                   .content('Wrong Content')
                   .ok('Lemme Retry')
                   .targetEvent(event)
-              )
-                .then(function () {
-                  Data.login.key = '';
-                });
+              );
             } else if (typeof response.error != 'undefined' && response.error.indexOf('voted') >= 0) {
 
               // Already Voted
+
+              Data.reset();
 
               $mdDialog.show(
                 $mdDialog.alert()
@@ -66,26 +67,7 @@
                   .content('Voted Content')
                   .ok('My Bad')
                   .targetEvent(event)
-              )
-                .then(function () {
-                  Data.login.enroll = '';
-                  Data.login.key = '';
-                });
-            } else {
-
-              // Unknown Error
-
-              $mdDialog.show(
-                $mdDialog.alert()
-                  .title('Unknown Title')
-                  .content('Unknown Content')
-                  .ok('Lemme Retry')
-                  .targetEvent(event)
-              )
-                .then(function () {
-                  Data.login.enroll = '';
-                  Data.login.key = '';
-                });
+              );
             }
           })
           .error(function () {
@@ -113,11 +95,11 @@
       };
 
       $scope.enrollHandler = function (event) {
-        if(event.which == 13) $scope.login();
+        if (event.which == 13) $scope.login();
       };
 
       $scope.keyHandler = function (event) {
-        if(event.which == 13) $scope.login();
+        if (event.which == 13) $scope.login();
       };
 
       $location.url(Data.properView());

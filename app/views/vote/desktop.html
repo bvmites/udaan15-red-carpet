@@ -8,24 +8,11 @@
 
   <md-card-content layout="column" layout-margin>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at eligendi illum molestiae mollitia quod
-      similique voluptate? Autem earum eius expedita, harum mollitia nemo quas ratione, tempore tenetur totam
-      voluptates.
+    <p ng-if="mode == 'upload' || mode == 'retry'">
+      Upload Content
     </p>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cum incidunt iusto laudantium nemo. Adipisci
-      aliquam asperiores beatae dolor dolores, est, illum maiores quae quia recusandae sit suscipit vel voluptatibus.
-    </p>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, culpa cumque cupiditate dignissimos dolor,
-      ducimus fugiat in iure laboriosam laborum maxime odit quibusdam, quisquam rem sequi soluta velit voluptatem
-      voluptatibus.
-    </p>
-
-    <div ng-if="confirmText == 'Uploading'" layout="row" layout-align="center">
+    <div ng-if="mode == 'upload'" layout="row" layout-align="center">
       <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
 
@@ -33,9 +20,18 @@
     <md-divider></md-divider>
     <br/>
 
-    <div layout-fill layout="row" layout-align="center center">
-      <md-button class="md-primary" ng-disabled="confirmText == 'Uploading'" ng-click="confirmNext()">{{confirmText}}</md-button>
+    <div ng-if="mode == 'upload'" layout-fill layout="row" layout-align="center center">
+      <md-button class="md-primary" ng-disabled="true">Uploading</md-button>
     </div>
+
+    <div ng-if="mode == 'retry'" layout-fill layout="row" layout-align="center center">
+      <md-button class="md-primary" ng-click="confirm()">Retry</md-button>
+    </div>
+
+    <div ng-if="mode == 'feedback'" layout-fill layout="row" layout-align="center center">
+      <md-button class="md-primary" ng-click="next()">Feedback</md-button>
+    </div>
+
 
   </md-card-content>
 </md-card>
