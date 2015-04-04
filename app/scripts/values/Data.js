@@ -7,11 +7,13 @@
         enroll: '',
         key: '',
         isLoggedIn: false,
-        hasVoted: false
+        hasVoted: false,
+        hasFeedback: false
       },
       url: {
         login: 'http://54.187.188.224:8001/api/login',
-        vote: 'http://54.187.188.224:8001/api/vote'
+        vote: 'http://54.187.188.224:8001/api/vote',
+        feedback: 'http://54.187.188.224:8001/api/feedback'
       },
       form: {
         risingStar: '',
@@ -46,38 +48,28 @@
         if (!(this.form.persona.male && this.form.persona.female)) return '/persona';
         if (!(this.form.artist.male && this.form.artist.female)) return '/artist';
         if (!this.login.hasVoted) return '/vote';
-        return '/feedback';
+        if (!this.login.hasFeedback) return '/feedback';
+        this.reset();
+        return '/login';
       },
       reset: function () {
-        this.login = {
-          enroll: '',
-          key: '',
-          isLoggedIn: false
-        };
-        this.form = {
-          risingStar: '',
-          sportsIcon: '',
-          face: {
-            male: '',
-            female: ''
-          },
-          styleIcon: {
-            male: '',
-            female: ''
-          },
-          persona: {
-            male: '',
-            female: ''
-          },
-          artist: {
-            male: '',
-            female: ''
-          }
-        };
-        this.feedback = {
-          stars: 0,
-          suggestions: ''
-        };
+        this.login.enroll = '';
+        this.login.key = '';
+        this.login.isLoggedIn = false;
+        this.login.hasVoted = false;
+        this.login.hasFeedback = false;
+        this.form.risingStar = '';
+        this.form.sportsIcon = '';
+        this.form.face.male = '';
+        this.form.face.female = '';
+        this.form.styleIcon.male = '';
+        this.form.styleIcon.female = '';
+        this.form.persona.male = '';
+        this.form.persona.female = '';
+        this.form.artist.male = '';
+        this.form.artist.female = '';
+        this.feedback.stars = 0;
+        this.feedback.suggestions = '';
       },
       viewport: {}
     })

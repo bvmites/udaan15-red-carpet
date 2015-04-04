@@ -5,7 +5,7 @@
     .controller('VoteCtrl', function ($scope, Data, $location, $http, $mdDialog) {
       $scope.viewport = Data.viewport;
 
-      $scope.confirm = function () {
+      $scope.vote = function () {
 
         $scope.mode = 'upload';
 
@@ -41,7 +41,6 @@
                   .title('Wrong Title')
                   .content('Wrong Content')
                   .ok('Lemme Retry')
-                  .targetEvent(event)
               )
                 .then(function () {
                   $location.url('/login');
@@ -57,7 +56,6 @@
                   .title('Voted Title')
                   .content('Voted Content')
                   .ok('My Bad')
-                  .targetEvent(event)
               )
                 .then(function () {
                   $location.url('/login');
@@ -84,7 +82,7 @@
       };
 
       $location.url(Data.properView());
-      if (Data.properView() == '/vote') $scope.confirm();
+      if (Data.properView() == '/vote') $scope.vote();
     });
 
 })();

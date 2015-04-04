@@ -1,0 +1,48 @@
+<md-card>
+
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Red Carpet</h2>
+    </div>
+  </md-toolbar>
+
+  <md-card-content layout="column" layout-margin>
+
+    <p ng-if="mode == 'feedback'">
+      Feedback Content
+    </p>
+
+    <p ng-if="mode == 'retry' || mode == 'logout' || mode == 'upload'">
+      Thanks Content
+    </p>
+
+    <md-slider ng-if="mode == 'feedback'" flex class="md-primary" md-discrete ng-model="data.stars" step="1" min="0" max="5" aria-label="rating">
+    </md-slider>
+
+    <md-input-container ng-if="mode == 'feedback'" flex>
+      <label>Suggestions (Optional)</label>
+      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" title="Suggestions"></textarea>
+    </md-input-container>
+
+    <br/>
+    <md-divider></md-divider>
+    <br/>
+
+    <div ng-if="mode == 'upload'" layout="row" layout-align="center">
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-if="mode == 'retry'" layout-fill layout="row" layout-align="center center">
+      <md-button class="md-primary md-raised" ng-click="feedback()">Retry</md-button>
+    </div>
+
+    <div ng-if="mode == 'feedback'" layout-fill layout="row" layout-align="center center">
+      <md-button class="md-primary md-raised" ng-click="feedback()">Feedback</md-button>
+    </div>
+
+    <div ng-if="mode == 'logout'" layout-fill layout="row" layout-align="center center">
+      <md-button class="md-primary md-raised" ng-click="logout()">Logout</md-button>
+    </div>
+
+  </md-card-content>
+</md-card>

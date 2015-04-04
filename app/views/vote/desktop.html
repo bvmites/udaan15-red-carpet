@@ -12,24 +12,24 @@
       Upload Content
     </p>
 
-    <div ng-if="mode == 'upload'" layout="row" layout-align="center">
-      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-    </div>
+    <p ng-if="mode == 'feedback'">
+      Feedback Content
+    </p>
 
     <br/>
     <md-divider></md-divider>
     <br/>
 
-    <div ng-if="mode == 'upload'" layout-fill layout="row" layout-align="center center">
-      <md-button class="md-primary" ng-disabled="true">Uploading</md-button>
+    <div ng-if="mode == 'upload'" layout="row" layout-align="center">
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
 
     <div ng-if="mode == 'retry'" layout-fill layout="row" layout-align="center center">
-      <md-button class="md-primary" ng-click="confirm()">Retry</md-button>
+      <md-button class="md-primary md-raised" ng-click="vote()">Retry</md-button>
     </div>
 
     <div ng-if="mode == 'feedback'" layout-fill layout="row" layout-align="center center">
-      <md-button class="md-primary" ng-click="next()">Feedback</md-button>
+      <md-button class="md-primary md-raised" ng-click="next()">Feedback</md-button>
     </div>
 
 
