@@ -74,7 +74,8 @@
         $location.url('/login');
       }
 
-      $scope.confirm();
+      $location.url(Data.properView());
+      if(Data.properView() == '/vote') $scope.confirm();
     });
 
 })();

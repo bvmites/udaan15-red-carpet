@@ -28,9 +28,7 @@
           return true;
       };
 
-      if (!Data.login.isLoggedIn) {
-        $location.url('/login');
-      }
+      $location.url(Data.properView());
     });
 
 })();

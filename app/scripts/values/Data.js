@@ -32,6 +32,16 @@
           female: ''
         }
       },
+      properView: function () {
+        if(!this.login.isLoggedIn) return '/login';
+        if(!this.form.risingStar) return '/rising-star';
+        if(!this.form.sportsIcon) return '/sports-icon';
+        if(!(this.form.face.male && this.form.face.female)) return '/face-of-the-year';
+        if(!(this.form.styleIcon.male && this.form.styleIcon.female)) return '/style-icon';
+        if(!(this.form.persona.male && this.form.persona.female)) return '/persona';
+        if(!(this.form.artist.male && this.form.artist.female)) return '/artist';
+        return '/vote';
+      },
       viewport: {}
     })
     .run(function (Data, screenSize) {

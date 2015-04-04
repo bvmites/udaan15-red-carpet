@@ -2,10 +2,36 @@
   'use strict';
 
   angular.module('u15RCApp')
-    .controller('LoginCtrl', function ($scope, Data, $http, $location, $mdDialog) {
+    .controller('LoginCtrl', function ($scope, Data, $http, $location, $mdDialog, $mdToast) {
       $scope.data = Data.login;
       $scope.viewport = Data.viewport;
       $scope.login = function (event) {
+
+        // Enroll Validator
+        if (!(/^\d{12}$/.test(Data.login.enroll))) {
+          $mdToast.show(
+            $mdToast
+              .simple()
+              .content('12 Digit Enrollment No.')
+              .position(Data.viewport.xs ? 'bottom' : 'top right')
+              .capsule(true)
+          );
+          angular.element(document.querySelector('#enroll')).focus();
+          return;
+        }
+
+        // Key Validator
+        if (Data.login.key.length != 4) {
+          $mdToast.show(
+            $mdToast
+              .simple()
+              .content('4 Digit Key')
+              .position('top right')
+              .capsule(true)
+          );
+          angular.element(document.querySelector('#key')).focus();
+          return;
+        }
 
         // Request Server
         $http.post(Data.url.login, {
@@ -16,7 +42,7 @@
             if (response.ok) {
               Data.login.isLoggedIn = true;
               $location.url('/form');
-            } else if(typeof response.error != 'undefined' && response.error.indexOf('credentials') >= 0) {
+            } else if (typeof response.error != 'undefined' && response.error.indexOf('credentials') >= 0) {
 
               // Wrong Credentials
 
@@ -76,7 +102,7 @@
           });
       };
 
-      $scope.showRegistration = function(event) {
+      $scope.showRegistration = function (event) {
         $mdDialog.show(
           $mdDialog.alert()
             .title('Registration Title')
@@ -86,9 +112,15 @@
         );
       };
 
-      if(Data.login.isLoggedIn){
-        $location.url('/form');
-      }
+      $scope.enrollHandler = function (event) {
+        if(event.which == 13) $scope.login();
+      };
+
+      $scope.keyHandler = function (event) {
+        if(event.which == 13) $scope.login();
+      };
+
+      $location.url(Data.properView());
 
     });
 
