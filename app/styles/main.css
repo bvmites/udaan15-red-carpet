@@ -4,8 +4,8 @@ img.rc-phone-image {
   border-radius: 50%;
 }
 img.rc-desktop-image {
-  width: 125px;
-  height: 125px;
+  width: 150px;
+  height: 150px;
   border-radius: 5%;
 }
 
@@ -18,10 +18,11 @@ img.rc-desktop-image {
 }
 
 .rc-item.rc-desktop {
-  width: 125px;
+  width: 150px;
 }
 
-.md-button {
+.rc-item > div {
+  border: 2px solid transparent;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -30,15 +31,22 @@ img.rc-desktop-image {
 
 .rc-item > img {
   border: 2px solid grey;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.md-button {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 }
 
 .rc-selected.rc-male > img {
   border: 2px solid rgba(63, 81, 181, 0.75);
   transform: scale(1.02);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
   -webkit-box-shadow: 5px 5px 20px 0 rgba(63,81,181,0.75);
   -moz-box-shadow: 5px 5px 20px 0 rgba(63,81,181,0.75);
   box-shadow: 5px 5px 20px 0 rgba(63,81,181,0.75);
@@ -47,10 +55,6 @@ img.rc-desktop-image {
 .rc-selected.rc-female > img {
   border: 2px solid rgba(255, 64, 129, 0.75);
   transform: scale(1.02);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
   -webkit-box-shadow: 5px 5px 20px 0 rgba(255,64,129,0.75);
   -moz-box-shadow: 5px 5px 20px 0 rgba(255,64,129,0.75);
   box-shadow: 5px 5px 20px 0 rgba(255,64,129,0.75);
@@ -58,12 +62,12 @@ img.rc-desktop-image {
 
 .rc-selected.rc-male > div {
   /*color: #3f51b5;*/
-  border-bottom: 2px solid rgba(63, 81, 181, 0.75);
+  border-bottom: 2px solid rgb(63, 81, 181);
 }
 
 .rc-selected.rc-female > div {
   /*color: #ff4081;*/
-  border-bottom: 2px solid rgba(255, 64, 129, 0.75);
+  border-bottom: 2px solid rgb(255, 64, 129);
 }
 
 .rc-item.rc-unselected {
