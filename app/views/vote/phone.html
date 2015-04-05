@@ -8,12 +8,18 @@
 
   <md-card-content layout="column" layout-margin>
 
-    <p ng-if="mode == 'upload' || mode == 'retry'">
-      Upload Content
+    <p ng-if="mode == 'upload'">
+      Processing your request
+    </p>
+
+    <p ng-if="mode == 'retry'">
+      Error submitting your request.
+      Click Retry to vote again.
     </p>
 
     <p ng-if="mode == 'feedback'">
-      Feedback Content
+      Thank you for voting in the "Red Carpet Awards". Please take a moment to rate our website. Positive suggestions
+      are always welcomed.
     </p>
 
     <br/>

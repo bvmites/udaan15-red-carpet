@@ -8,12 +8,17 @@
 
   <md-card-content layout="column" layout-margin>
 
-    <p ng-if="mode == 'feedback'">
-      Feedback Content
+    <p ng-if="mode == 'upload'">
+      Processing your request
     </p>
 
-    <p ng-if="mode == 'retry' || mode == 'logout' || mode == 'upload'">
-      Thanks Content
+    <p ng-if="mode == 'retry'">
+      Error submitting your request.
+      Click Retry to give us feedback again.
+    </p>
+
+    <p ng-if="mode == 'feedback'">
+      Thank you for your kind feedback. :)
     </p>
 
     <div ng-if="mode == 'feedback'" layout="row" layout-align="center">
