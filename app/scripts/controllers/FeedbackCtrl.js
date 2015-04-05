@@ -7,6 +7,14 @@
       $scope.data = Data.feedback;
       $scope.mode = 'feedback';
 
+      $scope.hearts = function () {
+        return new Array(Data.feedback.stars);
+      };
+
+      $scope.blacks = function () {
+        return new Array(5 - Data.feedback.stars);
+      };
+
       $scope.feedback = function () {
 
         $scope.mode = 'upload';
@@ -55,7 +63,7 @@
         $location.url('/login');
       };
 
-      $location.url(Data.properView());
+      //$location.url(Data.properView());
     });
 
 })();

@@ -16,12 +16,21 @@
       Thanks Content
     </p>
 
-    <md-slider ng-if="mode == 'feedback'" flex class="md-primary" md-discrete ng-model="data.stars" step="1" min="0" max="5" aria-label="rating">
+    <md-slider ng-if="mode == 'feedback'" flex class="md-primary" md-discrete ng-model="data.stars" step="1" min="0"
+               max="5" aria-label="rating">
     </md-slider>
+
+
+    <div ng-if="mode == 'feedback'" layout="row" layout-align="center center">
+      <div style="width: 120px; height: 24px;">
+        <md-icon class="fade md-accent" md-svg-src="images/favorite.svg" ng-repeat="heart in hearts() track by $index"></md-icon>
+      </div>
+    </div>
 
     <md-input-container ng-if="mode == 'feedback'" flex>
       <label>Suggestions (Optional)</label>
-      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" maxlength="139" title="Suggestions"></textarea>
+      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" maxlength="139"
+                title="Suggestions"></textarea>
     </md-input-container>
 
     <br/>
