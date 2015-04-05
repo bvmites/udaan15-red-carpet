@@ -24,7 +24,7 @@
 
     <md-input-container ng-if="mode == 'feedback'" flex>
       <label>Suggestions (Optional)</label>
-      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" title="Suggestions"></textarea>
+      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" maxlength="139" title="Suggestions"></textarea>
     </md-input-container>
 
     <br/>
@@ -40,7 +40,7 @@
     </div>
 
     <div ng-show="mode == 'feedback'" layout-fill layout="row" layout-align="center center">
-      <md-button class="md-primary md-raised" ng-click="feedback()">Feedback</md-button>
+      <md-button class="md-primary md-raised" ng-click="feedback()">Submit</md-button>
     </div>
 
     <div ng-show="mode == 'logout'" layout-fill layout="row" layout-align="center center">
