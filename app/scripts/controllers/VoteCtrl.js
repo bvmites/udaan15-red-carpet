@@ -26,8 +26,8 @@
               // Submitted Alert
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Submitted Title')
-                  .content('Submitted Content')
+                  .title('Thank You')
+                  .content('Your vote has been submitted successfully.')
                   .ok('Ahem')
               );
             } else if (typeof response.error != 'undefined' && response.error.indexOf('credentials') >= 0) {
@@ -38,9 +38,9 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Wrong Title')
-                  .content('Wrong Content')
-                  .ok('Lemme Retry')
+                  .title('Wrong Credentials')
+                  .content('Enrollment & Key combination is wrong.')
+                  .ok('Try Again')
               )
                 .then(function () {
                   $location.url('/login');
@@ -53,8 +53,8 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Voted Title')
-                  .content('Voted Content')
+                  .title('Once done...')
+                  .content('... I\'m afraid you can not vote again')
                   .ok('My Bad')
               )
                 .then(function () {
@@ -70,9 +70,9 @@
 
             $mdDialog.show(
               $mdDialog.alert()
-                .title('Error Title')
-                .content('Error Content')
-                .ok('Lemme Retry')
+                .title('Connection Error')
+                .content('The very basic need for voting online is an internet connection !!')
+                .ok('Connect')
             );
           });
       };

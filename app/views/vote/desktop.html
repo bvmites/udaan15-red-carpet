@@ -8,8 +8,8 @@
 
   <md-card-content layout="column" layout-margin>
 
-    <p ng-if="mode == 'upload' || mode == 'retry'">
-      Upload Content
+    <p class="md-primary" style="font-size: smaller; text-align: center;" ng-if="mode == 'upload' || mode == 'retry'">
+      {{data.list[data.index]}}
     </p>
 
     <p ng-if="mode == 'feedback'">

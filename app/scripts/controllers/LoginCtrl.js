@@ -50,9 +50,9 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Wrong Title')
-                  .content('Wrong Content')
-                  .ok('Lemme Retry')
+                  .title('Wrong Credentials')
+                  .content('Enrollment & Key combination is wrong.')
+                  .ok('Try Again')
                   .targetEvent(event)
               );
             } else if (typeof response.error != 'undefined' && response.error.indexOf('voted') >= 0) {
@@ -63,8 +63,8 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Voted Title')
-                  .content('Voted Content')
+                  .title('Already Voted')
+                  .content('You have already voted once.')
                   .ok('My Bad')
                   .targetEvent(event)
               );
@@ -76,9 +76,9 @@
 
             $mdDialog.show(
               $mdDialog.alert()
-                .title('Error Title')
-                .content('Error Content')
-                .ok('Lemme Retry')
+                .title('Connection Error')
+                .content('The very basic need for voting online is an internet connection !!')
+                .ok('Connect')
                 .targetEvent(event)
             );
           });
@@ -87,8 +87,8 @@
       $scope.showRegistration = function (event) {
         $mdDialog.show(
           $mdDialog.alert()
-            .title('Registration Title')
-            .content('Registration Content')
+            .title('Here\'s the way')
+            .content('Contact the registration desks @ A-block. ASAP')
             .ok('Got it!')
             .targetEvent(event)
         );

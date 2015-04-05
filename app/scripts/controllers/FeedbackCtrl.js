@@ -7,12 +7,8 @@
       $scope.data = Data.feedback;
       $scope.mode = 'feedback';
 
-      $scope.hearts = function () {
+      $scope.stars = function () {
         return new Array(Data.feedback.stars);
-      };
-
-      $scope.blacks = function () {
-        return new Array(5 - Data.feedback.stars);
       };
 
       $scope.feedback = function () {
@@ -31,16 +27,7 @@
             $scope.mode = 'logout';
 
             if (response.ok) {
-
               Data.login.hasFeedback = true;
-
-              // Submitted Alert
-              $mdDialog.show(
-                $mdDialog.alert()
-                  .title('Submitted Title')
-                  .content('Submitted Content')
-                  .ok('Ahem')
-              );
             }
           })
           .error(function () {
@@ -51,8 +38,8 @@
 
             $mdDialog.show(
               $mdDialog.alert()
-                .title('Error Title')
-                .content('Error Content')
+                .title('Connection Error')
+                .content('The very basic need for voting online is an internet connection !!')
                 .ok('Lemme Retry')
             );
           });
@@ -63,7 +50,7 @@
         $location.url('/login');
       };
 
-      //$location.url(Data.properView());
+      $location.url(Data.properView());
     });
 
 })();

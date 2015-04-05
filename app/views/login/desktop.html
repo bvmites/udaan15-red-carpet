@@ -8,7 +8,8 @@
 
   <md-card-content layout="row" layout-margin layout-align="space-around center">
 
-    <img width="300" height="300" src="images/banner.png" alt="Banner"/>
+    <img ng-src="images/banner.jpg" width="450" height="450"
+         alt="Banner"/>
 
     <md-card flex="33">
 
@@ -16,7 +17,8 @@
 
         <md-input-container>
           <label>Enrollment No.</label>
-          <input type="text" id="enroll" autofocus ng-keypress="enrollHandler($event)" ng-model="data.enroll" md-maxlength="12"
+          <input type="text" id="enroll" autofocus ng-keypress="enrollHandler($event)" ng-model="data.enroll"
+                 md-maxlength="12"
                  maxlength="12" title="Enrollment No." placeholder="130070107022">
         </md-input-container>
 
