@@ -9,7 +9,7 @@
         $location.url('/rising-star');
       };
 
-      if(!Data.login.isLoggedIn){
+      if (!Data.login.isLoggedIn) {
         $location.url('/login');
       }
     });

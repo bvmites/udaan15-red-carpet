@@ -6,7 +6,7 @@
       login: {
         enroll: '',
         key: '',
-        isLoggedIn: false,
+        isLoggedIn: true,
         hasVoted: false,
         hasFeedback: false
       },

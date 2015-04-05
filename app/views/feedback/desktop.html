@@ -24,13 +24,15 @@
 
     <div ng-if="mode == 'feedback'" layout="row" layout-align="center center">
       <div style="width: 120px; height: 24px;">
-        <md-icon class="fade md-accent" md-svg-src="images/star.svg" ng-repeat="heart in stars() track by $index"></md-icon>
+        <md-icon class="fade md-accent" md-svg-src="images/star.svg"
+                 ng-repeat="heart in stars() track by $index"></md-icon>
       </div>
     </div>
 
     <md-input-container ng-if="mode == 'feedback'" flex>
       <label>Suggestions (Optional)</label>
-      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" maxlength="139" title="Suggestions"></textarea>
+      <textarea ng-model="data.suggestions" columns="1" md-maxlength="139" maxlength="139"
+                title="Suggestions"></textarea>
     </md-input-container>
 
     <br/>
