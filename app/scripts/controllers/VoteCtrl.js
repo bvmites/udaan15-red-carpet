@@ -28,7 +28,7 @@
                 $mdDialog.alert()
                   .title('Thank You')
                   .content('Your vote has been submitted successfully.')
-                  .ok('Ahem')
+                  .ok('Okay')
               );
             } else if (typeof response.error != 'undefined' && response.error.indexOf('credentials') >= 0) {
 
@@ -38,9 +38,9 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Wrong Credentials')
-                  .content('Enrollment & Key combination is wrong.')
-                  .ok('Try Again')
+                  .title('Wrong Key')
+                  .content('Enter the key provided at registration desk.')
+                  .ok('Okay')
               )
                 .then(function () {
                   $location.url('/login');
@@ -53,8 +53,8 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Once done...')
-                  .content('... I\'m afraid you can not vote again')
+                  .title('Already Voted')
+                  .content('You have already voted once.')
                   .ok('My Bad')
               )
                 .then(function () {

@@ -17,14 +17,13 @@
       Click Retry to give us feedback again.
     </p>
 
-    <p ng-if="mode == 'feedback'">
-      Thank you for your kind feedback. :)
+    <p ng-if="mode == 'logout'">
+      Thank you for your kind feedback.
     </p>
 
     <md-slider ng-if="mode == 'feedback'" flex class="md-primary" md-discrete ng-model="data.stars" step="1" min="0"
                max="5" aria-label="rating">
     </md-slider>
-
 
     <div ng-if="mode == 'feedback'" layout="row" layout-align="center center">
       <div style="width: 120px; height: 24px;">

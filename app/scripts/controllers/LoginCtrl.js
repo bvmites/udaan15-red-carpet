@@ -50,9 +50,9 @@
 
               $mdDialog.show(
                 $mdDialog.alert()
-                  .title('Wrong Credentials')
-                  .content('Enrollment & Key combination is wrong.')
-                  .ok('Try Again')
+                  .title('Wrong Key')
+                  .content('Enter the key provided at registration desk.')
+                  .ok('Okay')
                   .targetEvent(event)
               );
             } else if (typeof response.error != 'undefined' && response.error.indexOf('voted') >= 0) {
@@ -88,7 +88,7 @@
         $mdDialog.show(
           $mdDialog.alert()
             .title('Here\'s the way')
-            .content('Contact the registration desks @ A-block. ASAP')
+            .content('Contact the registration desks set up @ A-block. ASAP.')
             .ok('Got it!')
             .targetEvent(event)
         );
